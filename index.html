@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Менің визитка сайтым</title>
+
+    <title>Аселдің жеке сайты</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -13,152 +15,388 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #f7f3ea;
-            color: #344236;
+            background: #171522;
+            color: #ffffff;
         }
 
-        header {
-            background: #344236;
-            color: white;
-            padding: 25px;
-            text-align: center;
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 30px;
         }
+
+        /* Басты блок */
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .info {
+            flex: 1;
+        }
+
+        .info h1 {
+            font-size: 55px;
+            margin-bottom: 10px;
+            color: #d8b4fe;
+        }
+
+        .info h2 {
+            font-size: 25px;
+            color: #a78bfa;
+        }
+
+        .info p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #d1d5db;
+        }
+
+        .profile {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 90px;
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Батырма */
+
+        button {
+            margin-top: 20px;
+            padding: 13px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #8b5cf6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #a855f7;
+            transform: scale(1.05);
+        }
+
+        /* Навигация */
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 15px;
+            gap: 35px;
+            padding: 20px;
+            border-bottom: 1px solid #373344;
         }
 
         nav a {
-            color: white;
+            color: #d8b4fe;
             text-decoration: none;
+            font-weight: bold;
         }
 
-        main {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
+        nav a:hover {
+            color: #ffffff;
         }
 
-        section {
-            background: white;
-            margin: 20px 0;
-            padding: 30px;
-            border-radius: 10px;
+        /* Қызығушылықтар */
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 35px;
+            color: #d8b4fe;
+            margin-bottom: 35px;
         }
 
         .cards {
-            display: flex;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .card {
-            flex: 1;
-            padding: 20px;
-            border: 1px solid #c49a5a;
-            border-radius: 8px;
+            background: #211e2e;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #39334d;
+            transition: 0.3s;
         }
 
-        button {
-            background: #c49a5a;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #8b5cf6;
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+
+        .card h3 {
+            color: #c084fc;
+            font-size: 22px;
+        }
+
+        .card p {
+            color: #c4c4cc;
+            line-height: 1.6;
+        }
+
+        /* Байланыс */
+
+        .contact {
+            text-align: center;
+            background: #211e2e;
+            padding: 45px;
+            border-radius: 20px;
+        }
+
+        #contactMessage {
+            color: #c084fc;
+            font-size: 18px;
+            margin-top: 20px;
         }
 
         footer {
-            background: #344236;
-            color: white;
+            margin-top: 50px;
+            padding: 25px;
             text-align: center;
-            padding: 20px;
+            background: #0f0e16;
+            color: #888;
         }
 
-        @media (max-width: 600px) {
+        /* Телефонға арналған */
+
+        @media (max-width: 700px) {
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 40px;
+            }
+
+            .info h1 {
+                font-size: 40px;
+            }
+
+            .profile {
+                width: 210px;
+                height: 210px;
+                font-size: 65px;
+            }
+
             nav {
                 flex-direction: column;
-                gap: 10px;
+                align-items: center;
+                gap: 15px;
             }
 
             .cards {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
         }
+
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Менің визитка сайтым</h1>
-
     <nav>
+        <a href="#home">Басты бет</a>
         <a href="#about">Мен туралы</a>
-        <a href="#hobby">Қызығушылықтарым</a>
+        <a href="#skills">Қызығушылықтар</a>
         <a href="#contact">Байланыс</a>
     </nav>
-</header>
 
-<main>
 
-    <section id="about">
-        <h2>Мен туралы</h2>
-        <p>Сәлем! Менің атым Асель.</p>
-        <p>Мен университет студентімін және веб-технологияларға қызығамын.</p>
+    <div class="container">
 
-        <button onclick="showMessage()">Мені бас</button>
-        <p id="message"></p>
-    </section>
+        <!-- Басты бет -->
 
-    <section id="hobby">
-        <h2>Қызығушылықтарым</h2>
+        <section class="hero" id="home">
 
-        <div class="cards">
-            <div class="card">
-                <h3>Бағдарламалау</h3>
-                <p>HTML, CSS және JavaScript үйреніп жүрмін.</p>
+            <div class="info">
+
+                <h2>Сәлем! 👋</h2>
+
+                <h1>Мен — Асель</h1>
+
+                <p>
+                    Ақпараттық технологиялар саласында білім алып жатқан
+                    студентпін. Заманауи технологиялар мен шығармашылық
+                    жобаларға қызығамын.
+                </p>
+
+                <button onclick="welcome()">
+                    Қош келдіңіз
+                </button>
+
+                <p id="welcomeText"></p>
+
             </div>
 
-            <div class="card">
-                <h3>Музыка</h3>
-                <p>Музыка тыңдағанды ұнатамын.</p>
+
+            <div class="profile">
+                👩🏻‍💻
             </div>
 
-            <div class="card">
-                <h3>Кино</h3>
-                <p>Фильмдер мен сериалдар көргенді ұнатамын.</p>
+        </section>
+
+
+        <!-- Мен туралы -->
+
+        <section class="section" id="about">
+
+            <h2>Мен туралы</h2>
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>🎓 Студент</h3>
+
+                    <p>
+                        Университетте білім алып, өз салам бойынша
+                        жаңа дағдыларды меңгеріп жүрмін.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>💡 Мақсатым</h3>
+
+                    <p>
+                        IT саласында тәжірибе жинап, қызықты
+                        әрі пайдалы жобалар жасау.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>🚀 Болашақ</h3>
+
+                    <p>
+                        Жаңа технологияларды меңгеріп,
+                        кәсіби маман болу.
+                    </p>
+
+                </div>
+
             </div>
-        </div>
-    </section>
 
-    <section id="contact">
-        <h2>Байланыс</h2>
-        <p>Маған хабарласу үшін төмендегі батырманы басыңыз.</p>
+        </section>
 
-        <button onclick="showContact()">Байланыс</button>
-        <p id="contactMessage"></p>
-    </section>
 
-</main>
+        <!-- Қызығушылықтар -->
 
-<footer>
-    <p>©️ 2026 Менің визитка сайтым</p>
-</footer>
+        <section class="section" id="skills">
 
-<script>
-    function showMessage() {
-        document.getElementById("message").textContent =
-            "Сәлем! Сайтқа қош келдіңіз!";
-    }
+            <h2>Қызығушылықтарым</h2>
 
-    function showContact() {
-        document.getElementById("contactMessage").textContent =
-            "Рақмет! Байланыс бөліміне қош келдіңіз!";
-    }
-</script>
+            <div class="cards">
+
+                <div class="card">
+
+                    <h3>💻 IT</h3>
+
+                    <p>
+                        Бағдарламалау және веб-сайт жасауды
+                        үйренген ұнайды.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>🎬 Кино</h3>
+
+                    <p>
+                        Бос уақытымда фильмдер мен
+                        сериалдар көргенді ұнатамын.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>🍰 Cooking</h3>
+
+                    <p>
+                        Тамақ дайындау және жаңа
+                        рецепттерді байқап көру ұнайды.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Байланыс -->
+
+        <section class="section" id="contact">
+
+            <div class="contact">
+
+                <h2>Байланыс</h2>
+
+                <p>
+                    Егер менімен байланысқыңыз келсе,
+                    төмендегі батырманы басыңыз.
+                </p>
+
+                <button onclick="contactMe()">
+                    Байланысу
+                </button>
+
+                <p id="contactMessage"></p>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <footer>
+
+        <p>© 2026 Асель | Жеке веб-парақша</p>
+
+    </footer>
+
+
+    <script>
+
+        function welcome() {
+
+            document.getElementById("welcomeText").textContent =
+                "Сайтқа қош келдіңіз! 😊";
+
+        }
+
+
+        function contactMe() {
+
+            document.getElementById("contactMessage").textContent =
+                "Рақмет! Сізбен байланысуға қуаныштымын 💜";
+
+        }
+
+    </script>
 
 </body>
 </html>
